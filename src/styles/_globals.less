@@ -1,0 +1,37 @@
+@import 'antd/dist/antd.less';
+// Import utils files
+@import url('./less/reset.less');
+@import url('./less/_fonts.less');
+@import url('./less/_variables.less');
+@import url('./less/_base.less');
+@import url('./less/_mixins.less');
+@import url('./less/_custom.less');
+
+body {
+  color: var(--text-main-color);
+  font: 400 15px arial;
+  min-height: 100vh;
+  // overflow: auto;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+a {
+  color: var(--text-main-color);
+}
+
+// Global styles applies to all app pages
+.app {
+  .ant-layout {
+    min-height: 100vh;
+
+    &-header,
+    &-content,
+    &-footer {
+      background: var(--main-bg);
+    }
+  }
+}
