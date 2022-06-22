@@ -15,9 +15,9 @@ export default function JokesPage() {
   const availableJokes = jokes.filter((joke) => {
     return votedResults.findIndex((votedJoke) => votedJoke.id === joke.id) === -1;
   });
-  const isJokesAvailable = availableJokes.length > 0;
+  const isRemainsJokes = availableJokes.length > 0;
 
-  const randomJoke = isJokesAvailable ? availableJokes[Math.floor(Math.random() * availableJokes.length)] : null;
+  const randomJoke = isRemainsJokes ? availableJokes[Math.floor(Math.random() * availableJokes.length)] : null;
 
   const handleVote = (jokeId, isJokeFunny) => {
     const jokeRecord = {
@@ -36,18 +36,18 @@ export default function JokesPage() {
         <div className="hero container-fluid">
           <div className="hero__content">
             <h1 className="hero__title">A joke a day keeps the doctor away.</h1>
-            <p className="hero__subtitle">If you joke the wrong way, you teeth have to pay. (Serious)</p>
+            <p className="hero__subtitle">If you joke the wrong way, you teeth have to pay. (Seriously)</p>
           </div>
         </div>
 
-        {!randomJoke ? (
-          <p className="joke-page__content">{NO_JOKES_MESSAGE}</p>
+        {!isRemainsJokes ? (
+          <h3 className="joke-page__content">{NO_JOKES_MESSAGE}</h3>
         ) : (
           <>
             <p className="joke-page__content">{randomJoke.content}</p>
 
             <div className="voting-buttons">
-              <button className="vote-button" onClick={() => handleVote(randomJoke.id, true)}>
+              <button className="vote-button btn-primary" onClick={() => handleVote(randomJoke.id, true)}>
                 This is Funny!
               </button>
               <button className="vote-button" onClick={() => handleVote(randomJoke.id, false)}>
