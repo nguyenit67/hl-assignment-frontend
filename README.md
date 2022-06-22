@@ -1,3 +1,5 @@
+![Preview](./preview.jpeg)
+
 ## Prerequisites
 
 - Node.js (12.20, 14.14.0, 16.0.0 or later) and NPM (8.0.0+)
